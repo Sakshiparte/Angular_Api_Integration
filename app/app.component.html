@@ -1,0 +1,31 @@
+<!-- 
+<h1>Hello from angular</h1>
+<div>{{ title}}</div>
+<div>{{users | json }}</div> -->
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>F_Name</th>
+      <th>L_Name</th>
+      <th>Email</th>
+      <th>Avatar</th>
+      <th>Action</th>
+    </tr>
+ </thead>
+  <tbody >
+    <tr *ngFor="let user of users">
+      <td>{{user['id']}}</td>
+      <td>{{user['first_name']}}</td>
+      <td>{{user['last_name']}}</td>
+      <td>{{user['email']}}</td>
+      <td><img [src]="user['avatar']" /></td>
+      <td>
+        <a href="" class="btn btn-secondary">Edit</a>
+        &nbsp;
+        <button (click)="deleteuser(user['id'])" class="btn btn-danger">Delete</button>
+      </td>
+     </tr>
+  </tbody>
+</table>
